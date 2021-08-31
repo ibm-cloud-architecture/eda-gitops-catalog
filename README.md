@@ -17,6 +17,22 @@ git clone https://github.com/jbcodeforce/eda-gitops-catalog.git
 
 Then apply on one of the defined product or operator.
 
+### IBM Catalog
+
+```sh
+# List existing catalog
+oc get catalogsource -n openshift-marketplace
+# If the IBM catalogs are not displayed add the following:
+oc apply -f ibm-catalog/catalog_source.yaml -n openshift-marketplace
+# With this catalog we should be able to install MQ operator
+oc get packagemanifests -n openshift-marketplace  
+# Inspect MQ operator
+oc describe packagemanifests ibm-mq -n openshift-marketplace
+```
+### IBM Product Operators
+
+Need an IBM product entitlement key to access IBM product docker images.
+
 ## Kustomize
 
 You can reference bases for the various tools here in your own kustomize overlay without 
