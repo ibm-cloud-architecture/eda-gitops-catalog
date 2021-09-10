@@ -29,6 +29,7 @@ oc get packagemanifests -n openshift-marketplace
 # Inspect MQ operator
 oc describe packagemanifests ibm-mq -n openshift-marketplace
 ```
+
 ### IBM Product Operators
 
 Need an IBM product entitlement key to access IBM product docker images.
