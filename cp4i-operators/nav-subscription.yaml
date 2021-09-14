@@ -1,10 +1,10 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: ibm-cp-integration
+  name: ibm-integration-platform-navigator
   namespace: openshift-marketplace
 spec:
-  channel: v1.3
-  name: ibm-cp-integration
+  channel: v5.0
+  name: ibm-integration-platform-navigator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace

@@ -4,4 +4,8 @@ kind: Kustomization
 namespace: openshift-operators
 
 resources:
-  - subscription.yaml
+  - cp4i-subscription.yaml
+  # The following are not needed as cp4i subscription will install other ones
+  # - nav-subscription.yaml
+  # - mq/subscription.yaml
+  # - event-streams/subscription.yaml
