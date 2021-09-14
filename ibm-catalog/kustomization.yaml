@@ -5,3 +5,4 @@ namespace: openshift-marketplace
 
 resources:
   - catalog-source.yaml
+  - open-catalog.yaml
