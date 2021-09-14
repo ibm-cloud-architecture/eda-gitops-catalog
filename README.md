@@ -12,7 +12,7 @@ Each catalog item has its own README.md for future instructions. Be sure to use 
 See the download page [here](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/).
 
 ```sh
-git clone https://github.com/jbcodeforce/eda-gitops-catalog.git
+git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
 ```
 
 Then apply on one of the defined product or operator.
@@ -23,7 +23,7 @@ Then apply on one of the defined product or operator.
 # List existing catalog
 oc get catalogsource -n openshift-marketplace
 # If the IBM catalogs are not displayed add the following:
-oc apply -f ibm-catalog/catalog_source.yaml -n openshift-marketplace
+oc apply -k ibm-catalog -n openshift-marketplace
 # With this catalog we should be able to install MQ operator
 oc get packagemanifests -n openshift-marketplace  
 # Inspect MQ operator
@@ -46,7 +46,7 @@ kind: Kustomization
 namespace: product-catalog-cicd
 
 resources:
-- github.com/jbcodeforce/eda-gitops-catalog/kafka-strimzi/operator/base/?ref=main
+- github.com/ibm-cloud-architecture/eda-gitops-catalog/kafka-strimzi/operator/base/?ref=main
 ```
 
 This enables you to patch these resources for your specific environments. 
