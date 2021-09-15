@@ -1,12 +1,12 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: ibm-cp-integration
+  name: ibm-integration-asset-repository
   namespace: openshift-operators
 spec:
-  channel: v1.1
+  channel: v1.3
   installPlanApproval: Automatic
-  name: ibm-cp-integration
+  name: ibm-integration-asset-repository
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
-  startingCSV: ibm-cp-integration.v1.1.0
+  startingCSV: ibm-integration-asset-repository.v1.3.1
