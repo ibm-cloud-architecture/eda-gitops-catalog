@@ -5,7 +5,7 @@ metadata:
   name: ibm-eventstreams
   namespace: openshift-operators
 spec:
-  channel: v2.3.1
+  channel: v2.3
   name: ibm-eventstreams
   installPlanApproval: Automatic
   source: ibm-operator-catalog

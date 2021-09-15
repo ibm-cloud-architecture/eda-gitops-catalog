@@ -4,8 +4,14 @@ kind: Kustomization
 namespace: openshift-operators
 
 resources:
+  # dependent of the version the following is getting all the  operators defined
   - cp4i-subscription.yaml
-  # The following are not needed as cp4i subscription will install other ones
+  # or we can do the one we  want
+  # - automation-foundation.yaml
+  # - asset-repo.yaml
+  # - itg-dashboard.yaml
+  # - couchdb.yaml
+  # - common-services.yaml
   # - nav-subscription.yaml
   # - mq/subscription.yaml
   # - event-streams/subscription.yaml
