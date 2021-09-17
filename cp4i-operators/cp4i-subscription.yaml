@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-operators
 spec:
   channel: v1.1
-  installPlanApproval: Automatic
+  installPlanApproval: Manual
   name: ibm-cp-integration
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace

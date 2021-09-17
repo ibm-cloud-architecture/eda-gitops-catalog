@@ -5,6 +5,7 @@ metadata:
   namespace: openshift-operators
 spec:
   channel: v5.0
+  installPlanApproval: Manual
   name: ibm-integration-platform-navigator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace

@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-operators
 spec:
   channel: v2.3
-  installPlanApproval: Automatic
+  installPlanApproval: Manual
   name: ibm-integration-operations-dashboard
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace

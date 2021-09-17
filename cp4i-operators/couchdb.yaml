@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-operators
 spec:
   channel: v1.4
-  installPlanApproval: Automatic
+  installPlanApproval: Manual
   name: couchdb-operator-certified
   source: certified-operators
   sourceNamespace: openshift-marketplace
