@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: eda-solution
+  namespace: openshift-gitops
+  labels:
+    gitops.tier.layer: infra
+spec:
+  description: The ArgoCD project to manage the risk scoring Solution deployment
+  sourceRepos: 
+  - https://github.com/ibm-cloud-architecture/kc-solution-gitops.git
+  # Only permit applications to deploy to the following namespace in the same cluster
+  destinations:
+  - namespace: risk-scoring-cicd
+    server: https://kubernetes.default.svc
+  - namespace: risk-scoring-dev
+    server: https://kubernetes.default.svc
+  - namespace: risk-scoring-stage
+    server: https://kubernetes.default.svc
+  - namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  - namespace: openshift-operators
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: "*"
+    kind: "*"
+  roles:
+  # A role which provides read-only access to all applications in the project
+  - name: read-only
+    description: Read-only privileges to this project
+    policies:
+    - p, proj:risk-scoring:read-only, applications, get, risk-scoring/*, allow
+    groups:
+    - argocd-admins
