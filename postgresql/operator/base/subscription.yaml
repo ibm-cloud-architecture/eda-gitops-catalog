@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: cloud-native-postgresql
+  creationTimestamp: null
+      time: '2021-09-14T10:30:18Z'
+  namespace: openshift-operators
+spec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: cloud-native-postgresql
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+  startingCSV: cloud-native-postgresql.v1.6.0
