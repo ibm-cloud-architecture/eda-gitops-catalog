@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/namespace
+  value: eventstreams
+- op: replace
+  path: /spec/startingCSV
+  value: ibm-common-service-operator.v3.11.0

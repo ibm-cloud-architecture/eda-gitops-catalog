@@ -5,8 +5,8 @@ metadata:
   namespace: openshift-operators
 spec:
   channel: v3
-  installPlanApproval: Manual
+  installPlanApproval: Automatic
   name: ibm-common-service-operator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
-  startingCSV: ibm-common-service-operator.v3.8.1
+  startingCSV: ibm-common-service-operator.v3.11.0
