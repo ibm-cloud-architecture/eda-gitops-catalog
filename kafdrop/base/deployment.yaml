@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: kafdrop
+  name: kafdrop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kafdrop
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: kafdrop
+    spec:
+      containers:
+      - args:
+        env:
+        - name: KAFKA_BROKERCONNECT
+          value: my-kafka-kafka-bootstrap.rt-inventory.svc:9092
+        - name: KAFKA_SSL_TRUSTSTORE_LOCATION
+          value: /deployments/certs/server/ca.p12
+        - name: KAFKA_SSL_TRUSTSTORE_TYPE
+          value: PKCS12
+        - name: KAFKA_SSL_KEYSTORE_LOCATION
+          value: /deployments/certs/user/user.p12
+        - name: KAFKA_SSL_KEYSTORE_TYPE
+          value: PKCS12
+        - name: KAFKA_SECURITY_PROTOCOL
+          value: SSL
+        - name: KAFKA_USER
+          value: tls-user
+        - name: KAFKA_CERT_PWD
+          valueFrom:
+            secretKeyRef:
+              key: ca.password
+              name: kafka-cluster-ca-cert
+        - name: USER_CERT_PWD
+          valueFrom:
+            secretKeyRef:
+              key: user.password
+              name: tls-user
+        envFrom:
+        - configMapRef:
+            name: kafka-env-cm
+        image: obsidiandynamics/kafdrop
+        imagePullPolicy: IfNotPresent
+        name: kafdrop
+        ports:
+        - containerPort: 9000
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /deployments/certs/server
+          name: kafka-cert
+          readOnly: false
+          subPath: ""
+        - mountPath: /deployments/certs/user
+          name: user-cert
+          readOnly: false
+          subPath: ""
+      serviceAccount: inventory-solution-sa
+      volumes:
+      - name: kafka-cert
+        secret:
+          defaultMode: 384
+          optional: true
+          secretName: kafka-cluster-ca-cert
+      - name: user-cert
+        secret:
+          defaultMode: 384
+          optional: true
+          secretName: tls-user

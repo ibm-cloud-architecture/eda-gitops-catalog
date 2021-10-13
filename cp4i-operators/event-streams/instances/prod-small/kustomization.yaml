@@ -1,0 +1,9 @@
+
+resources:
+  - ./namespace.yaml
+  - ./eventstreams-prod.yaml
+  - ./scram-user.yaml
+  - ./tls-user.yaml   
+ 
+
+namespace: eventstreams-prod
