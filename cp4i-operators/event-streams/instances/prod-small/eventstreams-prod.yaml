@@ -14,6 +14,9 @@ spec:
   collector: {}
   restProducer: {}
   cruiseControl: {}
+  requestIbmServices:
+    monitoring: true
+    iam: true
   strimziOverrides:
     kafka:
       replicas: 3
@@ -41,6 +44,8 @@ spec:
         type: persistent-claim
         size: 10Gi
         class: ibmc-block-gold
+      rack:
+        topologyKey: topology.kubernetes.io/zone
     zookeeper:
       replicas: 3
       metrics: {}
