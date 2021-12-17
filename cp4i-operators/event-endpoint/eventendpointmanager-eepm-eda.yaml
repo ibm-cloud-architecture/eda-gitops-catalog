@@ -1,0 +1,30 @@
+﻿apiVersion: eventendpointmanager.apiconnect.ibm.com/v1beta1
+kind: EventEndpointManager
+metadata:
+  labels:
+    app.kubernetes.io/instance: eventendpointmanager-minimum
+    app.kubernetes.io/managed-by: ibm-apiconnect
+    app.kubernetes.io/name: eventendpointmanager-minimum
+  name: eepm-eda
+  namespace: eepm-eda
+  resourceVersion: '49409868'
+  uid: ebe9967b-59fc-4c74-8884-87dd41b52682
+spec:
+  analytics:
+    storage:
+      enabled: true
+      type: unique
+  endpointTypes:
+    - Events
+    - APIs
+  imagePullSecrets:
+    - ibm-entitlement-key
+  imageRegistry: cp.icr.io/cp/apic
+  license:
+    accept: true
+    license: L-RJON-C2YLGB
+    metric: VIRTUAL_PROCESSOR_CORE
+    use: nonproduction
+  profile: n1xc10.m48
+  storageClassName: cp4a-file-retain-gold-gid
+  version: 10.0.3.0-ifix1-351

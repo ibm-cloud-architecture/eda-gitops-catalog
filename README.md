@@ -30,9 +30,64 @@ oc get packagemanifests -n openshift-marketplace
 oc describe packagemanifests ibm-mq -n openshift-marketplace
 ```
 
-### IBM Product Operators
+### Install Event Streams Using CLIs
 
-Need an IBM product entitlement key to access IBM product docker images.
+This section is an alternate of using OpenShift Console. We are using our GitOps catalog repository which
+defines the different operators and scripts we can use to install Event Streams and other services
+via scripts. All can be automatized with ArgoCD / OpenShift GitOps.
+
+* Create a project to host Event Streams cluster:
+
+  ```shell
+  oc new-project eventstreams
+  ```
+* Clone our eda-gitops-catalog project
+
+  ```sh
+  git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
+  ```
+* Create the `ibm-entitlement-key` secret in this project.
+
+  ```sh
+  oc create secret docker-registry ibm-entitlement-key \
+        --docker-username=cp \
+        --docker-server=cp.icr.io \
+        --namespace=eventstreams \
+        --docker-password=your_entitlement_key 
+  ```
+
+* Install Event Streams Operator subscriptions
+
+  ```sh
+  oc apply -k cp4i-operators/event-streams/operator/overlays/v2.4/
+  ```
+
+* Install one Event Streams instance: Instances of Event Streams can be created after the Event Streams operator is installed. 
+You can use te OpenShift console or our predefined cluster definition:
+
+  ```shell
+  oc apply -k cp4i-operators/event-streams/instances/dev/
+  ```
+
+  If you want to do the same thing for a production cluster
+
+  ```shell
+  oc apply -k cp4i-operators/event-streams/instances/prod-small/
+  ```
+
+### Install MQ broker
+
+### Install Event End Point management
+
+
+* Create a namespace
+* Copy the entitlement key
+* From IBM API Connect operator add an Event Endpoint Manager instance
+
+  ```sh
+  # In eda-gitop-catalog
+  oc apply -k c4pi-operators/event-endpoint
+  ```
 
 ## Kustomize
 

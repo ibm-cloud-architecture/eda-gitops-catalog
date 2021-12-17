@@ -1,0 +1,253 @@
+﻿apiVersion: apiconnect.ibm.com/v1beta1
+kind: APIConnectCluster
+metadata:
+  creationTimestamp: '2021-11-24T12:09:00Z'
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: apiconnect
+    app.kubernetes.io/managed-by: ibm-apiconnect
+    app.kubernetes.io/name: apiconnect-minimum
+  managedFields:
+    - apiVersion: apiconnect.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/managed-by': {}
+            'f:app.kubernetes.io/name': {}
+        'f:spec':
+          .: {}
+          'f:license':
+            .: {}
+            'f:accept': {}
+            'f:license': {}
+            'f:use': {}
+          'f:profile': {}
+          'f:storageClassName': {}
+          'f:version': {}
+      manager: axios
+      operation: Update
+      time: '2021-11-24T12:08:59Z'
+    - apiVersion: apiconnect.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:conditions': {}
+          'f:endpoints': {}
+          'f:phase': {}
+          'f:state': {}
+          'f:versions':
+            .: {}
+            'f:available':
+              .: {}
+              'f:channels': {}
+              'f:versions': {}
+            'f:reconciled': {}
+      manager: manager
+      operation: Update
+      time: '2021-11-24T12:09:00Z'
+  name: apis
+  namespace: cp4i
+  resourceVersion: '48901763'
+  uid: 1580d1e8-bdfd-45d7-ab51-cae059b51032
+spec:
+  imagePullSecrets:
+    - ibm-entitlement-key
+  imageRegistry: cp.icr.io/cp/apic
+  license:
+    accept: true
+    license: L-RJON-BZEP9N
+    metric: VIRTUAL_PROCESSOR_CORE
+    use: production
+  profile: n1xc7.m48
+  storageClassName: ocs-storagecluster-ceph-rbd
+  version: 10.0.3.0-ifix1
+status:
+  conditions:
+    - lastTransitionTime: '2021-11-24T12:09:00Z'
+      message: ''
+      reason: na
+      status: 'False'
+      type: Warning
+    - lastTransitionTime: '2021-12-15T14:24:34Z'
+      message: 7/7
+      reason: Running
+      status: 'True'
+      type: Ready
+    - lastTransitionTime: '2021-12-15T14:24:34Z'
+      message: ''
+      reason: na
+      status: 'False'
+      type: Pending
+    - lastTransitionTime: '2021-11-24T12:09:00Z'
+      message: ''
+      reason: na
+      status: 'False'
+      type: Error
+  endpoints:
+    - name: ui
+      type: UI
+      uri: >-
+        https://cpd-cp4i.garage-to-60b41835e65227550a2031aa4f2061fc-0000.ca-tor.containers.appdomain.cloud/integration/apis/cp4i/apis/manager
+    - name: admin
+      type: UI
+      uri: >-
+        https://cpd-cp4i.garage-to-60b41835e65227550a2031aa4f2061fc-0000.ca-tor.containers.appdomain.cloud/integration/apis/cp4i/apis/admin
+    - name: platformApi
+      type: API
+      uri: >-
+        https://cpd-cp4i.garage-to-60b41835e65227550a2031aa4f2061fc-0000.ca-tor.containers.appdomain.cloud/integration/apis/cp4i/apis/api
+    - name: consumerApi
+      type: API
+      uri: >-
+        https://cpd-cp4i.garage-to-60b41835e65227550a2031aa4f2061fc-0000.ca-tor.containers.appdomain.cloud/integration/apis/cp4i/apis/consumer-api
+  phase: Ready
+  state: 7/7
+  versions:
+    available:
+      channels:
+        - licenses:
+            - displayName: IBM API Connect Enterprise PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTv'
+              name: L-RJON-C2YLGB
+            - displayName: IBM Cloud Pak for Integration - API Calls 2021.2.1
+              link: 'https://ibm.biz/BdfyTm'
+              matchesCurrentType: true
+              name: L-RJON-BZEP9N
+            - displayName: IBM API Connect Enterprise Monthly Subscription V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTK'
+              name: L-RJON-C2YLBS
+            - displayName: >-
+                IBM API Connect Enterprise PVU Add-on for IBM Products
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTa'
+              name: L-RJON-C2YLCZ
+            - displayName: IBM API Connect Professional PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTG'
+              name: L-RJON-C2YL9M
+            - displayName: >-
+                IBM API Connect Professional Monthly Subscription
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTe'
+              name: L-RJON-C2YLAP
+            - displayName: IBM API Connect Lite V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTb'
+              name: L-RJON-C2YLEA
+          name: '10'
+        - licenses:
+            - displayName: IBM API Connect Enterprise PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTv'
+              name: L-RJON-C2YLGB
+            - displayName: IBM Cloud Pak for Integration - API Calls 2021.2.1
+              link: 'https://ibm.biz/BdfyTm'
+              matchesCurrentType: true
+              name: L-RJON-BZEP9N
+            - displayName: IBM API Connect Enterprise Monthly Subscription V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTK'
+              name: L-RJON-C2YLBS
+            - displayName: >-
+                IBM API Connect Enterprise PVU Add-on for IBM Products
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTa'
+              name: L-RJON-C2YLCZ
+            - displayName: IBM API Connect Professional PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTG'
+              name: L-RJON-C2YL9M
+            - displayName: >-
+                IBM API Connect Professional Monthly Subscription
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTe'
+              name: L-RJON-C2YLAP
+            - displayName: IBM API Connect Lite V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTb'
+              name: L-RJON-C2YLEA
+          name: '10.0'
+        - licenses:
+            - displayName: IBM API Connect Enterprise PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTv'
+              name: L-RJON-C2YLGB
+            - displayName: IBM Cloud Pak for Integration - API Calls 2021.2.1
+              link: 'https://ibm.biz/BdfyTm'
+              matchesCurrentType: true
+              name: L-RJON-BZEP9N
+            - displayName: IBM API Connect Enterprise Monthly Subscription V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTK'
+              name: L-RJON-C2YLBS
+            - displayName: >-
+                IBM API Connect Enterprise PVU Add-on for IBM Products
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTa'
+              name: L-RJON-C2YLCZ
+            - displayName: IBM API Connect Professional PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTG'
+              name: L-RJON-C2YL9M
+            - displayName: >-
+                IBM API Connect Professional Monthly Subscription
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTe'
+              name: L-RJON-C2YLAP
+            - displayName: IBM API Connect Lite V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTb'
+              name: L-RJON-C2YLEA
+          name: 10.0.3
+        - licenses:
+            - displayName: IBM API Connect Enterprise PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTv'
+              name: L-RJON-C2YLGB
+            - displayName: IBM Cloud Pak for Integration - API Calls 2021.2.1
+              link: 'https://ibm.biz/BdfyTm'
+              matchesCurrentType: true
+              name: L-RJON-BZEP9N
+            - displayName: IBM API Connect Enterprise Monthly Subscription V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTK'
+              name: L-RJON-C2YLBS
+            - displayName: >-
+                IBM API Connect Enterprise PVU Add-on for IBM Products
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTa'
+              name: L-RJON-C2YLCZ
+            - displayName: IBM API Connect Professional PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTG'
+              name: L-RJON-C2YL9M
+            - displayName: >-
+                IBM API Connect Professional Monthly Subscription
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTe'
+              name: L-RJON-C2YLAP
+            - displayName: IBM API Connect Lite V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTb'
+              name: L-RJON-C2YLEA
+          name: 10.0.3.0
+      versions:
+        - licenses:
+            - displayName: IBM API Connect Enterprise PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTv'
+              name: L-RJON-C2YLGB
+            - displayName: IBM Cloud Pak for Integration - API Calls 2021.2.1
+              link: 'https://ibm.biz/BdfyTm'
+              matchesCurrentType: true
+              name: L-RJON-BZEP9N
+            - displayName: IBM API Connect Enterprise Monthly Subscription V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTK'
+              name: L-RJON-C2YLBS
+            - displayName: >-
+                IBM API Connect Enterprise PVU Add-on for IBM Products
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTa'
+              name: L-RJON-C2YLCZ
+            - displayName: IBM API Connect Professional PVU V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTG'
+              name: L-RJON-C2YL9M
+            - displayName: >-
+                IBM API Connect Professional Monthly Subscription
+                V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTe'
+              name: L-RJON-C2YLAP
+            - displayName: IBM API Connect Lite V10.0.3.0-ifix1
+              link: 'https://ibm.biz/BdfyTb'
+              name: L-RJON-C2YLEA
+          name: 10.0.3.0-ifix1-351
+    reconciled: 10.0.3.0-ifix1-351
