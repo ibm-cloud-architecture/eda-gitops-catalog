@@ -8,7 +8,7 @@ based on the version of OpenShift you are using, or the version of the operator 
 The current *overlays* available are for the following channels:
 
 * [stable-4.7](overlays/stable-4.7) - OpenShift 4.7 - GitOps 1.2.0
-* [stable-487](overlays/stable-4.8) - OpenShift 4.8 - GitOps 1.3.2
+* [stable-48](overlays/stable-4.8) - OpenShift 4.8 - GitOps 1.3.2
 
 ## Usage
 
@@ -20,8 +20,3 @@ GitOps operator based on the overlay of your choice by running from the root
 oc apply -k openshift-gitops-operator/overlays/<channel>
 ```
 
-Or, without cloning:
-
-```
-oc apply -k https://github.com/ibm-cloud-architecture/eda-gitops-catalog/openshift-gitops/operator/overlays/stable
-```

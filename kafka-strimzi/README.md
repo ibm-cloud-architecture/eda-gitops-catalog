@@ -14,12 +14,6 @@ If you have cloned the `eda-gitops-catalog` repository, you can install the Stri
 oc apply -k kafka-strimzi/operator/overlay/stable
 ```
 
-Or, without cloning:
-
-```sh
-oc apply -k https://github.com/jbcodeforce/eda-gitops-catalog/kafka-strimzi/operator/overlay/stable
-```
-
 As part of a different overlay in your own GitOps repo:
 
 ```yaml

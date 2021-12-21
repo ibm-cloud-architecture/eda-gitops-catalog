@@ -11,4 +11,4 @@ patchesJson6902:
     kind: Subscription
     name: openshift-pipelines-operator
     namespace: openshift-operators
-  path: patch-channel.yaml
+  path: patch-csv.yaml
