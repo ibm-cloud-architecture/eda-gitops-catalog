@@ -2,14 +2,19 @@
 
 Installs the OpenShift GitOps (Argo CD) operator.
 
-Do not use the `base` directory directly, as you will need to patch the `channel` and `version` based on the version of OpenShift you are using, or the version of the operator you want to use.
+Do not use the `base` directory directly, as you will need to patch the `channel` and `version` 
+based on the version of OpenShift you are using, or the version of the operator you want to use.
 
 The current *overlays* available are for the following channels:
-* [stable-4.7](overlays/stable) - OpenShift 4.7
+
+* [stable-4.7](overlays/stable-4.7) - OpenShift 4.7 - GitOps 1.2.0
+* [stable-487](overlays/stable-4.8) - OpenShift 4.8 - GitOps 1.3.2
 
 ## Usage
 
-If you have cloned the `eda-gitops-catalog` repository, you can install the OpenShift GitOps operator based on the overlay of your choice by running from the root `eda-gitops-catalog` directory
+If you have cloned the `eda-gitops-catalog` repository, you can install the OpenShift 
+GitOps operator based on the overlay of your choice by running from the root
+ `eda-gitops-catalog` directory
 
 ```
 oc apply -k openshift-gitops-operator/overlays/<channel>

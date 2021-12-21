@@ -4,13 +4,4 @@ kind: Kustomization
 namespace: openshift-operators
 
 bases:
-  - ../../base
-
-patchesJson6902:
-- target:
-    group: operators.coreos.com
-    version: v1alpha1
-    kind: Subscription
-    name: openshift-gitops-operator
-    namespace: openshift-operators
-  path: patch-channel.yaml
+  - ../stable-4.8

@@ -14,7 +14,7 @@ Depending of the deployed operator the steps may bee different.
   storageClassName: cp4a-file-retain-gold-gid
   ```
 
-* Install The end point service
+* Install the end point service
 
   ```sh
   oc apply -k c4pi-operators/event-endpoint/
