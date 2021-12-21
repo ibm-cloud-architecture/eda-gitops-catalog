@@ -10,5 +10,5 @@ patchesJson6902:
     version: v1alpha1
     kind: Subscription
     name: elasticsearch-operator
-    namespace: openshift-operators-redhat
+    namespace: openshift-operators
   path: patch-channel.yaml
