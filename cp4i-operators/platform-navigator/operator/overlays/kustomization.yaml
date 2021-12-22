@@ -1,2 +1,2 @@
-base:
-  ./latest
+bases:
+  - ./latest

@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/channel
+  value: v1.6
+- op: replace
+  path: /spec/startingCSV
+  value: ibm-mq.v1.6.0

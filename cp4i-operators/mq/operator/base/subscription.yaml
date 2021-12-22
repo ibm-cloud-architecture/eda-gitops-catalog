@@ -4,9 +4,9 @@ metadata:
   name: ibm-mq
   namespace: openshift-operators
 spec:
-  channel: v1.6
+  channel: v1.5
   name: ibm-mq
   installPlanApproval: Automatic
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
-  startingCSV: ibm-mq.v1.6.0
+  startingCSV: ibm-mq.v1.5.0

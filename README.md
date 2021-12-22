@@ -41,6 +41,21 @@ oc get packagemanifests -n openshift-marketplace| grep ibm | sort
 oc describe packagemanifests ibm-mq -n openshift-marketplace
 ```
 
+### Define secret for IBM products license
+
+* Obtain your [IBM license entitlement key](https://github.com/IBM/cloudpak-gitops/blob/main/docs/install.md#obtain-an-entitlement-key)
+* Create the [OCP global pull secret of the `openshift-gitops` project](https://github.com/IBM/cloudpak-gitops/blob/main/docs/install.md#update-the-ocp-global-pull-secret)
+with the entitlement key
+
+    ```sh
+    KEY=<yourentitlementkey>
+    oc create secret docker-registry ibm-entitlement-key \
+    --docker-username=cp \
+    --docker-password=$KEY \
+    --docker-server=cp.icr.io \
+    --namespace=openshift-gitops 
+    ```
+
 ### Cloud Pack for Integration 
 
 * Install Platform Navigator operator to get access to the integrated user interface:
@@ -69,9 +84,9 @@ the sample file [license-reporter.yaml](./cp4i-operators/platform-navigator/oper
 Additionally you need to update the common-service instance of the OperandConfig operand in the Operand Deployment Lifecycle Manager operator. 
 You have to include the following line in the spec section of the ibm-licensing-operator. For more details check the [Knowledge Center](https://www.ibm.com/docs/en/cpfs?topic=reporter-deploying-license-service#lrcons).
 
-```yaml
+  ```yaml
   IBMLicenseServiceReporter: {}
-```
+  ```
 
 If you want to enable monitoring you can deploy the ConfigMap included in 
 file [monitoring-cm.yaml](./cp4i-operators/platform-navigator/operands/monitoring-cm.yaml) otherwise you can skip it.
@@ -84,58 +99,46 @@ examples:
 
 ### Install Event Streams Using CLIs
 
+* Deploy Event Streams operator
 
-* Create a project to host Event Streams cluster:
+  ```sh
+  oc apply -k cp4i-operators/event-streams/operator/overlays
+  ```
+
+* Install one Event Streams operands: Instances of Event Streams can be created after the Event Streams operator is installed. 
+You can use the OpenShift console or our predefined cluster definition:
 
   ```shell
-  oc new-project eventstreams
-  ```
-* Clone our eda-gitops-catalog project
-
-  ```sh
-  git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
-  ```
-* Create the `ibm-entitlement-key` secret in this project.
-
-  ```sh
-  oc create secret docker-registry ibm-entitlement-key \
-        --docker-username=cp \
-        --docker-server=cp.icr.io \
-        --namespace=eventstreams \
-        --docker-password=your_entitlement_key 
-  ```
-
-* Install Event Streams Operator subscriptions
-
-  ```sh
-  oc apply -k cp4i-operators/event-streams/operator/overlays/v2.4/
-  ```
-
-* Install one Event Streams instance: Instances of Event Streams can be created after the Event Streams operator is installed. 
-You can use te OpenShift console or our predefined cluster definition:
-
-  ```shell
-  oc apply -k cp4i-operators/event-streams/instances/dev/
+  oc apply -k cp4i-operators/event-streams/operands/dev/
   ```
 
   If you want to do the same thing for a production cluster
 
   ```shell
-  oc apply -k cp4i-operators/event-streams/instances/prod-small/
+  oc apply -k cp4i-operators/event-streams/operands/prod-small/
   ```
 
 ### Install MQ broker
 
+* Install MQ Operator
+
+ ```sh
+ oc apply -k cp4i-operators/mq/operator/overlays
+ ```
+
 ### Install Event End Point management
 
 
-* Create a namespace
-* Copy the entitlement key
+* Deploy API Connect Operator
+
+  ```sh
+  oc apply -k cp4i-operators/apic-connect/operator/overlays
+  ```
+
 * From IBM API Connect operator add an Event Endpoint Manager instance
 
   ```sh
-  # In eda-gitop-catalog
-  oc apply -k c4pi-operators/event-endpoint
+  oc apply -k c4pi-operators/event-endpoint/operands
   ```
 
 ## Kustomize

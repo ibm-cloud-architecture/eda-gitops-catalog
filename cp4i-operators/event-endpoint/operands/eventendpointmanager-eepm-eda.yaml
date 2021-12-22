@@ -5,10 +5,8 @@ metadata:
     app.kubernetes.io/instance: eventendpointmanager-minimum
     app.kubernetes.io/managed-by: ibm-apiconnect
     app.kubernetes.io/name: eventendpointmanager-minimum
-  name: eepm-eda
-  namespace: eepm-eda
-  resourceVersion: '49409868'
-  uid: ebe9967b-59fc-4c74-8884-87dd41b52682
+  name: eda-eepm
+  namespace: eda-eepm
 spec:
   analytics:
     storage:
