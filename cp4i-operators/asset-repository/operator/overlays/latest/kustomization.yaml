@@ -1,0 +1,8 @@
+bases:
+  - ../../base
+
+patchesJson6902:
+- path: asset-repo-patch.yaml
+  target:
+    kind: Subscription
+    name: ibm-integration-asset-repository

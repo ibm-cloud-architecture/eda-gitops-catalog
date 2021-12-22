@@ -1,0 +1,13 @@
+apiVersion: operator.ibm.com/v1alpha1
+kind: IBMLicenseServiceReporter
+metadata:
+  name: instance
+  labels:
+    app.kubernetes.io/instance: ibm-licensing-operator
+    app.kubernetes.io/managed-by: ibm-licensing-operator
+    app.kubernetes.io/name: ibm-licensing
+    operator.ibm.com/opreq-control: 'true'
+  namespace: ibm-common-services
+spec:
+  version: 1.11.0
+  storageClass: ibmc-block-gold

@@ -4,7 +4,7 @@ metadata:
   name: dev
   namespace: eventstreams-dev
 spec:
-  version: 10.4.0
+  version: 10.5.0
   license:
     accept: true
     use: CloudPakForIntegrationNonProduction

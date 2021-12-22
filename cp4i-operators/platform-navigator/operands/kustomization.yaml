@@ -1,0 +1,8 @@
+
+resources:
+  - ./cp4i-namespace.yaml
+  # - ./licenser-reporter.yaml
+  # - ./monitoring-cm.yaml
+  - ./cp4i-sample.yaml
+
+ 

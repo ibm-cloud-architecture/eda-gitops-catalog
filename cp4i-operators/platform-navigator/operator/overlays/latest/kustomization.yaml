@@ -1,0 +1,8 @@
+bases:
+  - ../../base
+
+patchesJson6902:
+- path: navigator-patch.yaml
+  target:
+    kind: Subscription
+    name: ibm-integration-platform-navigator

@@ -1,0 +1,21 @@
+apiVersion: integration.ibm.com/v1beta2
+kind: OperationsDashboard
+metadata:
+  labels:
+    app.kubernetes.io/instance: ibm-integration-operations-dashboard
+    app.kubernetes.io/managed-by: ibm-integration-operations-dashboard
+    app.kubernetes.io/name: ibm-integration-operations-dashboard
+  name: od-tracing
+  namespace: cp4i-tracing
+spec:
+  license:
+    accept: true
+    license: CP4I
+  storage:
+    configDbVolume:
+      class: ibmc-file-gold-gid
+    sharedVolume:
+      class: ibmc-file-gold-gid
+    tracingVolume:
+      class: ibmc-block-gold
+  version: 2021.4.1-1

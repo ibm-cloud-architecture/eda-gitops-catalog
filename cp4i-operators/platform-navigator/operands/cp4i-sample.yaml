@@ -1,0 +1,16 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: PlatformNavigator
+metadata:
+    name: cp4i-navigator
+    namespace: cp4i
+spec:
+  license:
+    accept: true
+    license: L-RJON-C7QG3S
+  #requestIbmServices:
+  #  licensing: true
+  mqDashboard: true
+  replicas: 3
+  storage:
+    class: ibmc-file-gold-gid
+  version: 2021.4.1
