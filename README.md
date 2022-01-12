@@ -1,9 +1,18 @@
 # Event-driven Solution gitOps catalog
 
-The GitOps Catalog includes kustomize bases and overlays for a number of OpenShift operators needed
-to develop event-driven solution and services.
+The EDA GitOps Catalog includes kustomize bases and overlays for a number of IBM Cloud Pak for Integration OpenShift operators needed
+to develop event-driven solutions.
 
-This is using the same structure as introduce by Red Hat COP team in [this repository](https://github.com/redhat-cop/gitops-catalog).
+This repository is using the same structure as introduced by Red Hat COP team in [this repository](https://github.com/redhat-cop/gitops-catalog).
+
+!!! info
+    Updated 1/7/2022: Event Streams 2.5.1
+
+This catalog includes definition for operators, and some example of operands. But the real appraoch
+is to use this catalog from another, project or solution based gitops repository, as illustrated
+with the following GitOps repository:
+
+* []()
 
 ## Usage
 
@@ -15,7 +24,9 @@ See the download page [here](https://mirror.openshift.com/pub/openshift-v4/x86_6
 git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
 ```
 
-Then apply on one of the defined operator and if you want to test you can try some sample operands too.
+Be sure to be connected to an OpenShift Cluster.
+
+Then apply one of the defined operator and if you want to test you can try some sample operands too.
 
 ### GitOps
 
@@ -64,7 +75,7 @@ with the entitlement key
 oc apply -k cp4i-operators/platform-navigator/operator/overlays
 ```
 
-* Sample Operands: to create on instance of the platform navigator you 
+* Sample Operands: to create on instance of the platform navigator
 
 ```sh
 oc apply -k cp4i-operators/platform-navigator/operands/
@@ -105,7 +116,13 @@ examples:
   oc apply -k cp4i-operators/event-streams/operator/overlays
   ```
 
-* Install one Event Streams operands: Instances of Event Streams can be created after the Event Streams operator is installed. 
+* Install one Event Streams operands: Instances of Event Streams can be created after the Event Streams operator is up and running. 
+To verify it is running:
+
+```
+oc get pods -n openshift-operators
+```
+
 You can use the OpenShift console or our predefined cluster definition:
 
   ```shell

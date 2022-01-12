@@ -3,4 +3,4 @@
   value: v2.5
 - op: replace
   path: /spec/startingCSV
-  value: ibm-eventstreams.v2.5.0
+  value: ibm-eventstreams.v2.5.1
