@@ -5,14 +5,14 @@ to develop event-driven solutions.
 
 This repository is using the same structure as introduced by Red Hat COP team in [this repository](https://github.com/redhat-cop/gitops-catalog).
 
-!!! info
-    Updated 1/7/2022: Event Streams 2.5.1
+> Updated 1/13/2022: Event Streams 2.5.1 - Deploy under `cp4i` project to better isolate operators 
 
-This catalog includes definition for operators, and some example of operands. But the real appraoch
+This catalog includes definition for operators, and some example of operands. But the real approach
 is to use this catalog from another, project or solution based gitops repository, as illustrated
 with the following GitOps repository:
 
-* []()
+* [RT Inventory](https://github.com/ibm-cloud-architecture/rt-inventory-gitops)
+* [Simplest order demo](https://github.com/jbcodeforce/eda-demo-order-gitops)
 
 ## Usage
 
@@ -26,6 +26,7 @@ git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
 
 Be sure to be connected to an OpenShift Cluster.
 
+Create the `cp4i` project: `oc new-project cp4i`
 Then apply one of the defined operator and if you want to test you can try some sample operands too.
 
 ### GitOps
@@ -119,9 +120,9 @@ examples:
 * Install one Event Streams operands: Instances of Event Streams can be created after the Event Streams operator is up and running. 
 To verify it is running:
 
-```
-oc get pods -n openshift-operators
-```
+  ```sh
+  oc get pods -n openshift-operators
+  ```
 
 You can use the OpenShift console or our predefined cluster definition:
 
@@ -146,15 +147,25 @@ You can use the OpenShift console or our predefined cluster definition:
 ### Install Event End Point management
 
 
-* Deploy API Connect Operator
+* Deploy API Connect Operators
 
   ```sh
+  oc project openshift-operators
   oc apply -k cp4i-operators/apic-connect/operator/overlays
+  ```
+
+  This will get `IBM DataPower Gateway` and `IBM API Connect` operators deployed in All namespace.
+
+* Deploy Cloud Native Postgresql operator.
+
+  ```sh
+  oc apply -k postgresql/operator/overlays/stable
   ```
 
 * From IBM API Connect operator add an Event Endpoint Manager instance
 
   ```sh
+  oc project <one of your project>
   oc apply -k c4pi-operators/event-endpoint/operands
   ```
 

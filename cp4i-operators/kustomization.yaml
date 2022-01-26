@@ -6,6 +6,7 @@ namespace: openshift-operators
 resources:
   # dependent of the version the following is getting all the  operators defined
   - cp4i-subscription.yaml
+  - operator-group.yaml
   # or we can do the one we  want
   # - automation-foundation.yaml
   # - asset-repo.yaml

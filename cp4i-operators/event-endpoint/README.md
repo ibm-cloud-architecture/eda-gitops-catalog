@@ -8,7 +8,8 @@ Depending of the deployed operator the steps may bee different.
   ```sh
   oc apply -k c4pi-operators/apic-connect/operator/overlays
   ```
-* Get a storage class with gid and modify the manifest: `c4pi-operators/event-endpoint/eventendpointmanager-eepm-eda.yaml`
+
+* Get a storage class with gid and modify the manifest: `c4pi-operators/event-endpoint/operands/eventendpointmanager-eepm-eda.yaml`
 
   ```yaml
   storageClassName: cp4a-file-retain-gold-gid
