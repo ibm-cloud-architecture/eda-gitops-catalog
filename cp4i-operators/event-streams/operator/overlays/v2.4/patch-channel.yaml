@@ -1,7 +1,4 @@
 - op: replace
-  path: /metadata/namespace
-  value: cp4i
-- op: replace
   path: /spec/channel
   value: v2.4
 - op: replace
