@@ -13,6 +13,7 @@ with the following GitOps repository:
 
 * [RT Inventory](https://github.com/ibm-cloud-architecture/rt-inventory-gitops)
 * [Simplest order demo](https://github.com/jbcodeforce/eda-demo-order-gitops)
+* [EDA Saga pattern with MQ anf Kafka demo](https://github.com/ibm-cloud-architecture/eda-kc-gitops)
 
 ## Usage
 

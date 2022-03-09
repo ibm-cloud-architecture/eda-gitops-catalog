@@ -6,9 +6,6 @@ bases:
 
 patchesJson6902:
 - target:
-    group: operators.coreos.com
-    version: v1alpha1
     kind: Subscription
-    name: elasticsearch-operator
-    namespace: openshift-operators
+    name: elasticsearch-eck-operator-certified
   path: patch-channel.yaml
