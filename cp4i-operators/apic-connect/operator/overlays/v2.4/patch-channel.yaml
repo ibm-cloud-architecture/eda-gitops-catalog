@@ -1,9 +1,6 @@
 - op: replace
-  path: /metadata/namespace
-  value: cp4i
-- op: replace
   path: /spec/channel
   value: v2.4
 - op: replace
   path: /spec/startingCSV
-  value: ibm-apiconnect.v2.4.0
+  value: ibm-apiconnect.v2.4.1

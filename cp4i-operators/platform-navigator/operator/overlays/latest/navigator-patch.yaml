@@ -2,8 +2,5 @@
   path: /spec/channel
   value: v5.2
 - op: replace
-  path: /metadata/namespace
-  value: cp4i
-- op: replace
   path: /spec/startingCSV
   value: ibm-integration-platform-navigator.v5.2.0
