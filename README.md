@@ -7,19 +7,19 @@ This repository is using the same structure as introduced by Red Hat COP team in
 
 > Updated 1/13/2022: Event Streams 2.5.1 - Deploy under `cp4i` project to better isolate operators 
 
-This catalog includes definition for operators, and some example of operands. But the real approach
-is to use this catalog from another, project or solution based gitops repository, as illustrated
+This catalog includes definition for operators, and some examples of operand. But the real approach
+is to use this catalog from other project or solution based gitops repository, as illustrated
 with the following GitOps repository:
 
-* [RT Inventory](https://github.com/ibm-cloud-architecture/rt-inventory-gitops)
-* [Simplest order demo](https://github.com/jbcodeforce/eda-demo-order-gitops)
-* [EDA Saga pattern with MQ anf Kafka demo](https://github.com/ibm-cloud-architecture/eda-kc-gitops)
+* [RT Inventory gitops](https://github.com/ibm-cloud-architecture/rt-inventory-gitops)
+* [Simplest order demo gitop](https://github.com/jbcodeforce/eda-demo-order-gitops)
+* [EDA Saga pattern with MQ anf Kafka demo - gitops](https://github.com/ibm-cloud-architecture/eda-kc-gitops)
 
 ## Usage
 
 Each catalog item has its own README.md for future instructions. Be sure to use the most recent `oc` CLI.
 
-See the download page [here](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/).
+See the oc cli download page [here](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/).
 
 ```sh
 git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
@@ -28,7 +28,7 @@ git clone https://github.com/ibm-cloud-architecture/eda-gitops-catalog.git
 Be sure to be connected to an OpenShift Cluster.
 
 Create the `cp4i` project: `oc new-project cp4i`
-Then apply one of the defined operator and if you want to test you can try some sample operands too.
+Then apply one of the defined operators and if you want to test you can try some sample operands too.
 
 ### GitOps
 
