@@ -5,18 +5,21 @@ metadata:
     app.kubernetes.io/instance: apiconnect
     app.kubernetes.io/managed-by: ibm-apiconnect
     app.kubernetes.io/name: apiconnect-minimum
-  name: apis
+  name: eda-apic
   namespace: cp4i
 spec:
+  endpointTypes:
+    - APIs
+    - Events
   imagePullSecrets:
     - ibm-entitlement-key
   imageRegistry: cp.icr.io/cp/apic
   license:
     accept: true
-    license: L-RJON-BZEP9N
+    license: L-RJON-C7BJ42
     metric: VIRTUAL_PROCESSOR_CORE
-    use: production
+    use: nonproduction
   profile: n1xc7.m48
-  storageClassName: ocs-storagecluster-ceph-rbd
-  version: 10.0.3.0-ifix1
+  storageClassName: ibmc-block-gold
+  version: 10.0.4.0-ifix2-339
 

@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/channel
+  value: v5.3
+- op: replace
+  path: /spec/startingCSV
+  value: ibm-integration-platform-navigator.v5.3.0
