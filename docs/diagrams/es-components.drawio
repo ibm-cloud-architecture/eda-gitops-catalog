@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="eUch8MVTRKDVEY23wjGv" name="Page-1">
+        <mxGraphModel dx="1574" dy="509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Streaming App" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="-400" y="236" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Event Streams Broker (Kafka)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-625" y="356" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Event Streams Broker (Kafka)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-485" y="356" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Event Streams Broker (Kafka)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-345" y="356" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Event Streams Schema Registry (Apicur.io)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-195" y="313" width="145" height="47" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Event Streams Operators (Strimzi)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-625" y="416" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Event Streams User Interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-630" y="156" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Event-driven microservice" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="-540" y="236" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="OpenShift" style="swimlane;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="-646" y="120" width="610" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Broker Optimization (Cruise Control)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="11">
+                    <mxGeometry x="450" y="140" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Monitoring (Kibana and Prometheus)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="11">
+                    <mxGeometry x="450" y="80" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Kafka Connector" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="11">
+                    <mxGeometry x="20" y="165" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="External Event Source" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="-820" y="206" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Persistence Bucket (Sink)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="206" width="120" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
