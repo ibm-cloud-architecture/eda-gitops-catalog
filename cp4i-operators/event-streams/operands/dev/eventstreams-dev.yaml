@@ -2,7 +2,7 @@
 kind: EventStreams
 metadata:
   name: dev
-  namespace: cp4i
+  namespace: eventstreams-dev
 spec:
   version: 10.5.0
   license:
@@ -19,8 +19,32 @@ spec:
   security:
     internalTls: TLSv1.2
   strimziOverrides:
+    entityOperator: 
+      topicOperator:
+        resources:
+          limits:
+            cpu: "1"
+            memory: 3Gi
+          requests:
+            cpu: 90m
+            memory: 2Gi
+      userOperator:
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1500Mi
+          requests:
+            cpu: 203m
+            memory: 650Mi
     kafka:
       replicas: 3
+      resources:
+        requests:
+          memory: 4Gi
+          cpu: "1"
+        limits:
+          memory: 6Gi
+          cpu: "2"
       authorization:
         type: runas
       config:
@@ -41,11 +65,9 @@ spec:
         tls:
           authentication:
             type: tls
-      metrics: {}
       storage:
         type: ephemeral
     zookeeper:
       replicas: 3
-      metrics: {}
       storage:
         type: ephemeral

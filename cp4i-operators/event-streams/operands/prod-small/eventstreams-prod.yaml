@@ -20,6 +20,8 @@ spec:
   strimziOverrides:
     kafka:
       replicas: 3
+      rack:
+        topologyKey: topology.kubernetes.io/zone
       authorization:
         type: runas
       config:
@@ -40,12 +42,36 @@ spec:
           authentication:
             type: tls
       metrics: {}
+      resources:
+        limits:
+          cpu: 4000m
+          memory: 8096Mi
+        requests:
+          cpu: 2000m
+          memory: 4048Mi
       storage:
         type: persistent-claim
         size: 10Gi
         class: ibmc-block-gold
       rack:
         topologyKey: topology.kubernetes.io/zone
+      entityOperator:
+        topicOperator:
+          resources:
+            limits:
+              cpu: "1"
+              memory: 3Gi
+            requests:
+              cpu: 90m
+              memory: 2Gi
+        userOperator:
+          resources:
+            limits:
+              cpu: "1"
+              memory: 1500Mi
+            requests:
+              cpu: 203m
+              memory: 650Mi
     zookeeper:
       replicas: 3
       metrics: {}
