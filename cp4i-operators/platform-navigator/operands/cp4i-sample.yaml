@@ -7,8 +7,8 @@ spec:
   license:
     accept: true
     license: L-RJON-C7QG3S
-  #requestIbmServices:
-  #  licensing: true
+  requestIbmServices:
+    licensing: false
   mqDashboard: true
   replicas: 1
   storage:
