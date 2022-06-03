@@ -1,3 +1,3 @@
 - op: replace
   path: /spec/startingCSV
-  value: openshift-gitops-operator.v1.4.1
+  value: openshift-gitops-operator.v1.5.2
